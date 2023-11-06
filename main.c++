@@ -5,7 +5,7 @@ using namespace std;
 class clsPerson{
     private:
         int _id, _phone;
-        string _FirstName, _LastName, _Email, _Depertement;
+        string _FirstName, _LastName, _Email, _Depertement, _subject, _body, _message;
     public:
         // create object wihtout constructor parameter
         clsPerson(){
@@ -50,8 +50,17 @@ class clsPerson{
             cin>>phone;
             _phone = phone;
         }
+        void setSendEmail(){
+            string subject = subject;
+            cout<<"Enter Your Subject Title : "<<endl;
+            cin>>subject;
+            _subject = subject;
+            string body = body;
+            cout<<"Enter Your Body : "<<endl;
+            cin>>body;
+            _body = body;
+        }
         
-
         // get all information user
 
         string getFirst(){
@@ -69,6 +78,10 @@ class clsPerson{
         int getPhone(){
             return _phone;
         }
+        string getsendEmail(){
+            return _body;
+        }
+       
         
         // print all information
         void print(){
@@ -77,6 +90,8 @@ class clsPerson{
             cout<<"FistName => "<<_Email<<endl;
             cout<<"FistName => "<<_phone<<endl;
             cout<<"FistName => "<<_Depertement<<endl;
+            cout<<"the email was succesful sent to : "<<_Email<<endl;
+            cout<<"the content was"<<_body;
         }
 };
 
@@ -107,7 +122,7 @@ class clsDeveloper : public clsPerson{
         void print(){
             clsPerson::print();
             cout<<"You earning is  "<<_salary<<endl;
-            cout<<"You use "<<_Programming_langage<<" to programm"<<endl;
+            cout<<"You use <<"<<_Programming_langage<<" >> to programm"<<endl;
         }
 };
 
@@ -121,17 +136,19 @@ int main()
     AhmedDev.setDepertement();
     AhmedDev.setsalary();
     AhmedDev.setLangage();
+    // AhmedDev.setSendEmail();
+  
     AhmedDev.print();
     cout<<"______________________________"<<endl;
-    clsDeveloper kader;
-    kader.setFirst();
-    kader.setLast();
-    kader.setEmail();
-    kader.setPhone();
-    kader.setDepertement();
-    kader.setsalary();
-    kader.setLangage();
-    kader.print();
+    // clsDeveloper kader;
+    // kader.setFirst();
+    // kader.setLast();
+    // kader.setEmail();
+    // kader.setPhone();
+    // kader.setDepertement();
+    // kader.setsalary();
+    // kader.setLangage();
+    // kader.print();
     
     return 0;
 }
