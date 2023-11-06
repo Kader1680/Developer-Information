@@ -55,12 +55,20 @@ class clsPerson{
             cout<<"Enter Your Subject Title : "<<endl;
             cin>>subject;
             _subject = subject;
-            string body = body;
+           
+        }
+        void setBodyEmail(){
+             string body = body;
             cout<<"Enter Your Body : "<<endl;
             cin>>body;
             _body = body;
         }
-        
+        void sendMessage(){
+            int message;
+            cout<<"type your message "<<endl;
+            cin>>message;
+            _message = message;
+        }
         // get all information user
 
         string getFirst(){
@@ -81,17 +89,20 @@ class clsPerson{
         string getsendEmail(){
             return _body;
         }
-       
+        string getMessagge(){
+            return _message;
+        }
         
         // print all information
         void print(){
             cout<<"FistName => "<<_FirstName<<endl;
-            cout<<"FistName => "<<_LastName<<endl;
-            cout<<"FistName => "<<_Email<<endl;
-            cout<<"FistName => "<<_phone<<endl;
+            cout<<"LastName => "<<_LastName<<endl;
+            cout<<"Email => "<<_Email<<endl;
+            cout<<"Phone    => "<<_phone<<endl;
             cout<<"FistName => "<<_Depertement<<endl;
             cout<<"the email was succesful sent to : "<<_Email<<endl;
-            cout<<"the content was"<<_body;
+            cout<<"the message was succesful sent to :"<<_phone<<endl;
+
         }
 };
 
@@ -111,7 +122,7 @@ class clsDeveloper : public clsPerson{
         }
         void setLangage(){
             string Programming_langage;
-            cout<<"enter programming langage : ";
+            cout<<"enter programming langage : "<<endl;
             cin>>Programming_langage;
             _Programming_langage = Programming_langage;
         }
@@ -136,7 +147,10 @@ int main()
     AhmedDev.setDepertement();
     AhmedDev.setsalary();
     AhmedDev.setLangage();
-    // AhmedDev.setSendEmail();
+    AhmedDev.setSendEmail();
+    AhmedDev.setBodyEmail();
+    AhmedDev.sendMessage();
+
   
     AhmedDev.print();
     cout<<"______________________________"<<endl;
