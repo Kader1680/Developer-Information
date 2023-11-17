@@ -3,7 +3,7 @@
 using namespace std;
 
 class clsPerson{
-    private:
+    protected:
         int _id, _phone;
         string _FirstName, _LastName, _Email, _Depertement, _subject, _body, _message;
     public:
@@ -95,7 +95,6 @@ class clsPerson{
         
         // print all information
         void print(){
-            cout<<"________________________________________________"<<endl;
             cout<<"FistName => "<<_FirstName<<endl;
             cout<<"LastName => "<<_LastName<<endl;
             cout<<"Email => "<<_Email<<endl;
@@ -154,7 +153,7 @@ class clsRecrurter : public clsPerson{
         }
         void setYrears(){
             int years = years;
-            cout<<"how many years do you recrutre emoloyer ?";
+            cout<<"how many years do you recrutre emoloyer ? ";
             cin>>years;
             _years = years;
         }
@@ -170,9 +169,8 @@ class clsRecrurter : public clsPerson{
         int getYears(){
             return _years;
         }
-
         void print(){
-            cout<<"has "<<_years<<" and he/she hire "<<_employer<<endl;
+            cout<<_FirstName<<" "<<_LastName<<" has "<<_years<<" and he/she hire "<<_employer<<endl;
         }
 };
 int main()
