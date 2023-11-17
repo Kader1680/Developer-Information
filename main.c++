@@ -95,6 +95,7 @@ class clsPerson{
         
         // print all information
         void print(){
+            cout<<"________________________________________________"<<endl;
             cout<<"FistName => "<<_FirstName<<endl;
             cout<<"LastName => "<<_LastName<<endl;
             cout<<"Email => "<<_Email<<endl;
@@ -137,32 +138,88 @@ class clsDeveloper : public clsPerson{
         }
 };
 
+
+class clsRecrurter : public clsPerson{
+    private:
+        int _years;
+        string _employer;
+    public:
+        clsRecrurter(){
+
+        }
+        clsRecrurter(int years, string employer){
+            _employer = employer;
+            _years = years;
+
+        }
+        void setYrears(){
+            int years = years;
+            cout<<"how many years do you recrutre emoloyer ?";
+            cin>>years;
+            _years = years;
+        }
+        void setEmoployerType(){
+            int employer = employer;
+            cout<<"What type of employer do you recrute ? ";
+            cin>>employer;
+            _employer = employer;
+        }
+        string  getEmployerType(){
+            return _employer;
+        }
+        int getYears(){
+            return _years;
+        }
+
+        void print(){
+            cout<<"has "<<_years<<" and he/she hire "<<_employer<<endl;
+        }
+};
 int main()
 {
-    clsDeveloper AhmedDev;
-    AhmedDev.setFirst();
-    AhmedDev.setLast();
-    AhmedDev.setEmail();
-    AhmedDev.setPhone();
-    AhmedDev.setDepertement();
-    AhmedDev.setsalary();
-    AhmedDev.setLangage();
-    AhmedDev.setSendEmail();
-    AhmedDev.setBodyEmail();
-    AhmedDev.sendMessage();
-
-  
-    AhmedDev.print();
-    cout<<"______________________________"<<endl;
-    // clsDeveloper kader;
-    // kader.setFirst();
-    // kader.setLast();
-    // kader.setEmail();
-    // kader.setPhone();
-    // kader.setDepertement();
-    // kader.setsalary();
-    // kader.setLangage();
-    // kader.print();
     
+    int choise;
+    cout<<"choose number from 1 to 2 as your role in company"<<endl;
+    cout<<"1. employer"<<endl;
+    cout<<"2. recrteur"<<endl;
+    cin>>choise;
+
+    if (choise == 1)
+    {
+        clsDeveloper AhmedDev;
+            AhmedDev.setFirst();
+            AhmedDev.setLast();
+            AhmedDev.setEmail();
+            AhmedDev.setPhone();
+            AhmedDev.setDepertement();
+            AhmedDev.setsalary();
+            AhmedDev.setLangage();
+            AhmedDev.setSendEmail();
+            AhmedDev.setBodyEmail();
+            AhmedDev.sendMessage();
+            cout<<"________________________________________________"<<endl;    
+
+            AhmedDev.print();
+            cout<<"________________________________________________"<<endl;    
+
+    }
+    else if (choise == 2)
+    {
+        clsRecrurter AmelRec;
+        AmelRec.setFirst();
+        AmelRec.setLast();
+        AmelRec.setYrears();
+        AmelRec.setEmoployerType();
+        cout<<"________________________________________________"<<endl;    
+
+        AmelRec.print();
+        cout<<"________________________________________________"<<endl;    
+
+    }
+    else
+    {
+        cout<<"sorry pleas enter number from 1 to 2";
+    }
+ 
     return 0;
 }
