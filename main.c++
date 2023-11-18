@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+#include "./clsQA.c++"
 class clsPerson{
     protected:
         int _id, _phone;
@@ -110,12 +110,27 @@ class clsDeveloper : public clsPerson{
     private:  
         int _salary;
         string _Programming_langage;
+        string _question;
     public:
         void setsalary(){
             int salary;
             cout<<"enter your salary : ";
             cin>>salary;
             _salary = salary;
+        }
+        void setQuestion(){
+            string question, anwser;
+            cout<<"Question for you : cpp is procudural programming  ";
+            if (anwser == "yes")
+            {
+               cout<<"you are hired "<<endl;
+            }else{
+               cout<<"sorry you are not hired "<<endl;
+                
+            }
+            
+            // cin>>question;
+            // _salary = question;
         }
         double getSalary(){
             return _salary;
@@ -176,12 +191,17 @@ class clsRecrurter : public clsPerson{
 int main()
 {
     
+    cout<<"________________________________________________"<<endl;    
+    cout<<"________________________________________________"<<endl;    
+    cout<<"___________ Hire Employer System _______________"<<endl;    
+    cout<<"______________ Choose Number __________________"<<endl; 
+    cout<<"_______________ 1. employer ___________________"<<endl;
+    cout<<"_______________ 2. recrteur _______________ "<<endl;   
+    cout<<"_______________ 3. Q/A _______________ "<<endl;   
+    cout<<"________________________________________________"<<endl;  
+    cout<<"you number is => ";  
     int choise;
-    cout<<"choose number from 1 to 2 as your role in company"<<endl;
-    cout<<"1. employer"<<endl;
-    cout<<"2. recrteur"<<endl;
     cin>>choise;
-
     if (choise == 1)
     {
         clsDeveloper AhmedDev;
@@ -211,6 +231,15 @@ int main()
         cout<<"________________________________________________"<<endl;    
 
         AmelRec.print();
+        cout<<"________________________________________________"<<endl;    
+
+    }
+    else if (choise == 3)
+    {
+        clsQADeveloper D;
+        D.setQstDevlpr();
+        cout<<"________________________________________________"<<endl;    
+        D.show();
         cout<<"________________________________________________"<<endl;    
 
     }
