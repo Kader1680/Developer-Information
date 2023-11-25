@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 #include "./clsQA.c++"
+// #include "./clsTeamLeader.c++"
 class clsPerson{
     protected:
         int _id, _phone;
@@ -110,8 +111,11 @@ class clsDeveloper : public clsPerson{
     private:  
         int _salary;
         string _Programming_langage;
-        string _question;
+        string _question, _oop, _dsa, _algorirhm, _langage, _backend;
     public:
+        clsDeveloper(){
+
+        }
         void setsalary(){
             int salary;
             cout<<"enter your salary : ";
@@ -119,18 +123,18 @@ class clsDeveloper : public clsPerson{
             _salary = salary;
         }
         void setQuestion(){
-            string question, anwser;
+            string _oop, _dsa, _algorirhm, _langage, _backend;
             cout<<"Question for you : cpp is procudural programming  ";
-            if (anwser == "yes")
+            cin>>_langage;
+            if (_langage == "yes")
             {
-               cout<<"you are hired "<<endl;
-            }else{
-               cout<<"sorry you are not hired "<<endl;
-                
+               cout<<"good "<<endl;
+            }else
+            {
+                cout<<"Bad  "<<endl;
+
             }
             
-            // cin>>question;
-            // _salary = question;
         }
         double getSalary(){
             return _salary;
@@ -188,23 +192,28 @@ class clsRecrurter : public clsPerson{
             cout<<_FirstName<<" "<<_LastName<<" has "<<_years<<" and he/she hire "<<_employer<<endl;
         }
 };
+
+
+
 int main()
 {
     
-    cout<<"________________________________________________"<<endl;    
-    cout<<"________________________________________________"<<endl;    
-    cout<<"___________ Hire Employer System _______________"<<endl;    
-    cout<<"______________ Choose Number __________________"<<endl; 
-    cout<<"_______________ 1. employer ___________________"<<endl;
-    cout<<"_______________ 2. recrteur _______________ "<<endl;   
-    cout<<"_______________ 3. Q/A _______________ "<<endl;   
-    cout<<"________________________________________________"<<endl;  
-    cout<<"you number is => ";  
+    cout<<"__________________________________________________"<<endl;    
+    cout<<"__________________________________________________"<<endl;    
+    cout<<"___________ Hire Employer System _________________"<<endl;    
+    cout<<"_____________ Choose Your Choise _________________"<<endl; 
+    cout<<"_____________   1. Engineer      _________________"<<endl;
+    cout<<"_____________   2. Recruiter     _________________"<<endl;   
+    cout<<"_____________   3. Question & Annswer ____________"<<endl;   
+    cout<<"_____________   4. Team Leader   _________________"<<endl;   
+    cout<<"__________________________________________________"<<endl;  
+    cout<<"__________________________________________________"<<endl;  
+    cout<<"Enter Random Number from 1 to 5 : ";  
     int choise;
     cin>>choise;
     if (choise == 1)
     {
-        clsDeveloper AhmedDev;
+            clsDeveloper AhmedDev;
             AhmedDev.setFirst();
             AhmedDev.setLast();
             AhmedDev.setEmail();
@@ -212,9 +221,7 @@ int main()
             AhmedDev.setDepertement();
             AhmedDev.setsalary();
             AhmedDev.setLangage();
-            AhmedDev.setSendEmail();
-            AhmedDev.setBodyEmail();
-            AhmedDev.sendMessage();
+            AhmedDev.setQuestion();
             cout<<"________________________________________________"<<endl;    
 
             AhmedDev.print();
@@ -237,15 +244,25 @@ int main()
     else if (choise == 3)
     {
         clsQADeveloper D;
+        D.setQst();
         D.setQstDevlpr();
         cout<<"________________________________________________"<<endl;    
         D.show();
         cout<<"________________________________________________"<<endl;    
 
     }
+    else if (choise == 4)
+    {
+        clsTeamLeader Team;
+        Team.setQst();
+        Team.setrangSalary();
+        cout<<"________________________________________________"<<endl;    
+        Team.show();
+        cout<<"________________________________________________"<<endl; 
+    }
     else
     {
-        cout<<"sorry pleas enter number from 1 to 2";
+        cout<<"sorry pleas enter number from 1 to 4";
     }
  
     return 0;

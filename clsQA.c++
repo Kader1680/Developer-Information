@@ -20,7 +20,7 @@ public:
     }
     
     void show(){
-        cout<<"great you passed and your answer is : "<<_respGeneral;
+        cout<<"great you passed ! ";
     }
     
 };
@@ -29,14 +29,16 @@ class clsQADeveloper : public clsQA {
     private:
         string _Html, _C, _python;
     public:
-        
+    
+    
     void setQstDevlpr(){
+
         cout<<"is Html langage of programming ?  yes or not "<<endl;
         string html;
         cin>>html;
         _Html = html;
 
-        cout<<"Can See Work with OOP ?  yes or not "<<endl;
+        cout<<"Vector is Data Structre Non Linaire ?  yes or not "<<endl;
         string c;
         cin>>c;
         _C = c;
@@ -67,6 +69,48 @@ class clsQADeveloper : public clsQA {
         
     }
 };
+
+
+class clsTeamLeader : public clsQA
+{
+private:
+    string _rangSalary;
+public:
+    clsTeamLeader(){
+        _rangSalary = "";
+    };
+    void setrangSalary(){
+        cout<< "What's the salary range for this role ? "<<endl;
+        cout<< "1 - If a recruiter doesn’t bring up compensation in the interview, ask about it.  "<<endl;
+        cout<< "2 - Don't do research ahead of time to see the typical salary range for a person in this role "<<endl;
+        cout<< "choose 1 or 2  of this question "<<endl;
+        string rSlary;
+        cin>>rSlary;
+        _rangSalary = rSlary;
+
+        
+    }
+
+    string getrangSalary(){
+
+        return _rangSalary;
+        if (_rangSalary == "1")
+        {
+            cout<<"True it's correct answer !";
+        }
+        else
+        {
+            cout<<"False it's incorrect answer !";
+
+        }
+
+    
+        
+    }
+    
+};
+
+
 
 
 
